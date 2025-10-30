@@ -28,6 +28,15 @@ def test_subtract(c, result):
 
 
 @pytest.mark.parametrize("c, result",
+                         [(c1, 2),
+                          (c2, 9338266260),
+                          (c4, 2)
+                          ])
+def test_multiply(c, result):
+    assert c.multiply() == result
+
+
+@pytest.mark.parametrize("c, result",
                          [(c1, 0.5),
                           (c4, 2)
                           ])
