@@ -53,9 +53,14 @@ def test_multiply(a: int, b: int, result):
         (1, 2, 0.5),
         (2, 1, 2),
         (-0.1, -0.2, 0.5),
-        (2, 0, None),
     ],
 )
 def test_divide(a: int, b: int, result):
     c = Calculator(a, b)
     assert pytest.approx(c.divide()) == result
+
+
+def test_divide_by_zero():
+    c = Calculator(2, 0)
+    with pytest.raises(ZeroDivisionError):
+        c.divide()
