@@ -18,7 +18,7 @@ from calculator import Calculator
         (2, 0, 2),
     ],
 )
-def test_add(a: int, b: int, result: int):
+def test_add(a: float, b: float, result: float):
     c = Calculator(a, b)
     assert pytest.approx(c.sum()) == result
 
@@ -33,7 +33,7 @@ def test_add(a: int, b: int, result: int):
         (2, 0, 2),
     ],
 )
-def test_subtract(a: int, b: int, result):
+def test_subtract(a: float, b: float, result: float):
     c = Calculator(a, b)
     assert pytest.approx(c.subtract()) == result
 
@@ -42,7 +42,7 @@ def test_subtract(a: int, b: int, result):
     "a, b, result",
     [(1, 2, 2), (4, 2334566565, 9338266260), (-0.1, -0.2, 0.02), (2, 1, 2), (2, 0, 0)],
 )
-def test_multiply(a: int, b: int, result):
+def test_multiply(a: float, b: float, result: float):
     c = Calculator(a, b)
     assert pytest.approx(c.multiply()) == result
 
@@ -55,7 +55,7 @@ def test_multiply(a: int, b: int, result):
         (-0.1, -0.2, 0.5),
     ],
 )
-def test_divide(a: int, b: int, result):
+def test_divide(a: float, b: float, result: float):
     c = Calculator(a, b)
     assert pytest.approx(c.divide()) == result
 
