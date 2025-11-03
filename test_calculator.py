@@ -1,11 +1,7 @@
 import pytest
 from calculator import Calculator
 
-# c1 = Calculator(1, 2)
-# c2 = Calculator(4, 2334566565)
-# c3 = Calculator(-2334566565, -0.000004)
-# c4 = Calculator(2, 1)
-# c5 = Calculator(2, 0)
+# It would be better to create separate test functions for ints (using assert) and floats (pytest.approx)
 
 
 @pytest.mark.parametrize(
@@ -60,7 +56,8 @@ def test_divide(a: float, b: float, result: float):
     assert pytest.approx(c.divide()) == result
 
 
-def test_divide_by_zero():
-    c = Calculator(2, 0)
+@pytest.mark.parametrize("a,b", [(2, -0.0), (2, 0)])
+def test_divide_by_zero_raise_error(a: float, b: float):
+    c = Calculator(a, b)
     with pytest.raises(ZeroDivisionError):
         c.divide()
