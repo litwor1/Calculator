@@ -1,4 +1,5 @@
 import pytest
+
 from calculator import Calculator
 
 # It would be better to create separate test functions for ints (using assert) and floats (pytest.approx)
@@ -44,7 +45,7 @@ def test_multiply(a: float, b: float, result: float):
 
 
 @pytest.mark.parametrize(
-    "a,b, result",
+    "a, b, result",
     [
         (1, 2, 0.5),
         (2, 1, 2),
@@ -56,7 +57,7 @@ def test_divide(a: float, b: float, result: float):
     assert pytest.approx(c.divide()) == result
 
 
-@pytest.mark.parametrize("a,b", [(2, -0.0), (2, 0)])
+@pytest.mark.parametrize("a, b", [(2, -0.0), (2, 0)])
 def test_divide_by_zero_raise_error(a: float, b: float):
     c = Calculator(a, b)
     with pytest.raises(ZeroDivisionError):

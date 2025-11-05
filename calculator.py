@@ -1,6 +1,3 @@
-from typing import Optional
-
-
 class Calculator:
     def __init__(self, op1: float, op2: float):
         self.__op1 = op1
