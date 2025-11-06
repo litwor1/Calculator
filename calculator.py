@@ -14,3 +14,11 @@ class Calculator:
 
     def divide(self) -> float:
         return self.__op1 / self.__op2
+
+
+# if __name__ == "__main__":
+#    c = Calculator(2, 3)
+#    print(f"c.sum: {c.sum()}")
+#    print(f"c.subtract: {c.subtract()}")
+#    print(f"c.multiply: {c.multiply()}")
+#    print(f"c.divide: {c.divide()}")
